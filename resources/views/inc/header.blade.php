@@ -1,5 +1,5 @@
 @php
-    $user_id = 10;
+    $user_id = Auth::id();
 @endphp
 
 <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
@@ -32,8 +32,9 @@
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarUsersDropdownMenuLink">
-                        <a class="dropdown-item" href="/settings/profile/{{ $user_id }}">Perfil</a>
-                        <a class="dropdown-item" href="/settings/users">Usuários</a>
+                        <!-- <a class="dropdown-item" href="/settings/profile/{{ $user_id }}">Perfil</a> -->
+                        <!-- <a class="dropdown-item" href="/settings/users">Usuários</a> -->
+                        <a class="dropdown-item" href="/about">Sobre</a>
                         <a class="dropdown-item" href="/login/out">Sair</a>
                     </div>
                 </li>

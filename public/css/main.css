@@ -65,3 +65,43 @@
 .btn {
   font-size: 14px;
 }
+
+/* Search tables */
+
+#datatable_filter input {
+  height: 30px;
+  width: 300px;
+  font-size: 12px;
+  padding: 4px 15px;
+  font-weight: 400;
+}
+
+/* Tables Pagination Laravel */
+
+ul.pagination {
+  padding: 35px 0 15px 0;
+  width: 100%;
+  display: block;
+}
+
+ul.pagination li {
+  float: left;
+}
+
+ul.pagination li>a,
+ul.pagination li>span {
+  width: 45px;
+  padding: 5px 10px;
+  display: block;
+  background: #dfdfdf;
+  margin: 0 5px;
+  font-weight: 600;
+  border-radius: 5px;
+  text-align: center;
+  color: z#ccc;
+}
+
+ul.pagination li.active>span {
+  color: #fff;
+  background: #2fa6f9;
+}

@@ -11,13 +11,13 @@ Route::get('/login/out', ['as' => 'login.out', 'uses' => 'LoginController@out'])
  * Protect routes from unauthenticated access
  */
 
-// ALTERAR MIDDLEWARE PARA AUTH
-Route::group(['middleware' => 'check_auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
     /**
      *  Main routes
      */
     Route::get('/', ['as' => 'dashboard', 'uses' => 'MainController@dashboard']);
     Route::get('notfound', ['as' => 'notfound', 'uses' => 'MainController@notfound']);
+    Route::get('about', ['as' => 'about', 'uses' => 'MainController@about']);
 
     /**
      * General routes

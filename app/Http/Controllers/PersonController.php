@@ -10,6 +10,14 @@ class PersonController extends Controller {
 
     /*
     ######################
+    # Attributes
+    ###################### 
+    */
+
+    private $items_limit = 30;
+
+    /*
+    ######################
     # View Methods
     ###################### 
     */
@@ -18,9 +26,11 @@ class PersonController extends Controller {
      * 
      */
     public function manage_natural() {    
+        $items = PessoaFisica::paginate($this->items_limit);        
         return view('pages.person.manage_natural', [
             'page' => 'person-manage-natural',
-            'page_title' => 'Pessoa Física - Gerenciar'
+            'page_title' => 'Pessoa Física - Gerenciar',
+            'items' => $items
         ]);
     } 
 
@@ -28,7 +38,7 @@ class PersonController extends Controller {
      * 
      */
     public function manage_legal() {  
-        $items = PessoaJuridica::all();        
+        $items = PessoaJuridica::paginate($this->items_limit);        
         return view('pages.person.manage_legal', [
             'page' => 'person-manage-legal',
             'page_title' => 'Pessoa Jurídica - Gerenciar',

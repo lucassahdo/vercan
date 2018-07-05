@@ -12,11 +12,11 @@
                 </div>
                 <div class="card-body">
                     <div class="toolbar">
-                        <!--        Here you can write extra buttons/actions for the toolbar              -->
                     </div>
                     <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
+                                <th>N</th>
                                 <th>CNPJ</th>
                                 <th>Razão Social</th>
                                 <th>Nome Fantasia</th>
@@ -33,6 +33,7 @@
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>N</th>
                                 <th>CNPJ</th>
                                 <th>Razão Social</th>
                                 <th>Nome Fantasia</th>
@@ -48,11 +49,13 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($items as $item)
+                            @foreach ($items as $i => $item)
                                 @php
                                     $data = $item['attributes'];
+                                    $position = $i + 1;
                                 @endphp                           
                                 <tr>
+                                    <td>{{ $position }}</td>
                                     <td>{{ $data['cnpj'] }}</td>
                                     <td>{{ $data['razao_social'] }}</td>
                                     <td>{{ $data['nome_fantasia'] }}</td>           
@@ -76,6 +79,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {!! $items->links() !!}
                 </div>
                 <!-- end content-->
             </div>

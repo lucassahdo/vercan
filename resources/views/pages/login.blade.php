@@ -47,6 +47,8 @@
                                             </div>
                                             <input name="password" type="password" placeholder="Senha" class="form-control">
                                         </div>
+
+                                        <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                                     </div>
                                     <div class="card-footer ">
                                         <a id="btnSubmit" href="javascript:{}" class="btn btn-primary btn-round btn-lg btn-block mb-3">INICIAR</a>

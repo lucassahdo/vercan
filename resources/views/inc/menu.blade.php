@@ -1,8 +1,7 @@
 @php
-$person_id = 23;
-$user_id = 10;
+$user_id = Auth::id();
 @endphp
-
+    
 <div class="sidebar" data-color="black">
     <div class="logo">
         <a href="/" class="simple-text logo-mini">
@@ -87,6 +86,7 @@ $user_id = 10;
                 </a>
             </li>
 
+            <!-- 
             <h2 class="sidebar-group-title">Configurações</h2>
 
             @php
@@ -98,8 +98,10 @@ $user_id = 10;
                     <i class="now-ui-icons users_circle-08"></i>
                     <p>Perfil</p>
                 </a>
-            </li>
+            </li> 
+            -->
 
+            <!--
             @php
                 $route = "/settings/users";
                 $route_name = "settings.users";
@@ -110,6 +112,7 @@ $user_id = 10;
                     <p>Usuários</p>
                 </a>
             </li>
+            -->
 
             <!--
             @php
@@ -123,22 +126,11 @@ $user_id = 10;
                 </a>
             </li>   
             -->
-            
-            @php
-                $route = "/login/out";
-                $route_name = "login.out";
-            @endphp
-            <li class="{{ AppUtils::isActiveRoute($route_name) }}">
-                <a href="{{ $route }}">
-                    <i class="now-ui-icons media-1_button-power"></i>
-                    <p>Sair</p>
-                </a>
-            </li>
-            
+
             <h2 class="sidebar-group-title">Extra</h2>
 
             @php
-                $route = "/";
+                $route = "/about";
                 $route_name = "about";
             @endphp
 
@@ -148,6 +140,19 @@ $user_id = 10;
                     <p>Sobre</p>
                 </a>
             </li>
+
+            <h2 class="sidebar-group-title">Usuário</h2>
+            
+            @php
+                $route = "/login/out";
+                $route_name = "login.out";
+            @endphp
+            <li class="{{ AppUtils::isActiveRoute($route_name) }}">
+                <a id="menu_logout" href="{{ $route }}">
+                    <i class="now-ui-icons media-1_button-power"></i>
+                    <p>Sair</p>
+                </a>
+            </li>       
         </ul>
     </div>
 </div>
