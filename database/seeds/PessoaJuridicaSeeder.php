@@ -12,9 +12,7 @@ class PessoaJuridicaSeeder extends Seeder {
      */
     public function run() {
         DB::table('pessoas_juridicas')->truncate();
-
         $faker = Faker::create();
-
         foreach(range(1, 200) as $i) {            
             echo "[Pessoa Juridica] Seeding: $i\n";
             PessoaJuridica::create([

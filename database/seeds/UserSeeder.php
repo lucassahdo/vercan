@@ -15,7 +15,6 @@ class UserSeeder extends Seeder {
             'name' => 'Heitor Garcia',
             'email' => 'admin@vercan.com.br',
             'password'=> bcrypt('vercan@123')
-        ]);
-        
+        ]);        
     }
 }
